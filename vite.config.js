@@ -5,6 +5,9 @@ import stylelint from 'vite-plugin-stylelint'
 export default defineConfig(({ command, mode }) => {
   return {
     root: 'src',
-    plugins: [eslint(), stylelint()]
+    plugins: [eslint(), stylelint()],
+    build: {
+      outDir: '../dist'
+    }
   }
 })
