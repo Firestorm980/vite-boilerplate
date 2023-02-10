@@ -1,0 +1,25 @@
+{
+  "name": "@10up-animation/ui-accordion-css",
+  "version": "1.0.0",
+  "description": "10up Animation - UI Accordion CSS",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run clean && vite build",
+    "preview": "vite preview",
+    "clean": "rm -rf dist"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.33.0",
+    "eslint-config-standard": "^17.0.0",
+    "stylelint": "^15.0.0",
+    "stylelint-config-standard": "^30.0.1",
+    "vite": "^4.1.1",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-singlefile": "^0.13.2",
+    "vite-plugin-stylelint": "^4.2.0"
+  },
+  "dependencies": {
+    "@10up/component-accordion": "^2.0.1"
+  }
+}
