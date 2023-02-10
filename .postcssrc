@@ -2,6 +2,7 @@
   "plugins": {
     "stylelint": {},
     "postcss-reporter": { "clearReportedMessages": true },
+    "postcss-import": {},
     "postcss-mixins": {},
     "postcss-preset-env": {
       "stage": 0,
