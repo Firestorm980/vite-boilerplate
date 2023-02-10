@@ -4,7 +4,7 @@
   "description": "10up Animation - UI Menu Full Screen CSS",
   "scripts": {
     "dev": "vite",
-    "build": "npm run clean && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "clean": "rm -rf dist"
   },
