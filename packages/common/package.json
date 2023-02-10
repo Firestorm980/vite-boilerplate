@@ -1,0 +1,19 @@
+{
+  "name": "@10up-animation/common",
+  "version": "1.0.0",
+  "description": "10up Animation - Common Components",
+  "main": "dist/index.css",
+  "style": "dist/index.css",
+  "scripts": {
+    "build": "postcss src/css/index.css --dir dist",
+    "clean": "rm -rf dist"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
