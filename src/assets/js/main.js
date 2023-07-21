@@ -21,3 +21,7 @@ document.querySelector('#app').innerHTML = `
 `
 
 setupCounter(document.querySelector('#counter'))
+
+if (typeof window !== 'undefined') {
+  import('./pwa')
+}
