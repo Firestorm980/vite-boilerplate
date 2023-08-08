@@ -1,23 +1,66 @@
 import '../css/style.css'
-import javascriptLogo from '../svg/javascript.svg'
-import { setupCounter } from './counter.js'
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+import db from './db'
+import './form'
 
-setupCounter(document.querySelector('#counter'))
+const characters = document.getElementById('characters')
+
+export const renderCharacters = async () => {
+  const { rows } = await db.allDocs({ include_docs: true })
+
+  rows.forEach(async (row) => {
+    const { id, doc } = row
+
+    if (document.getElementById(id)) {
+      return
+    }
+
+    const blob = await db.getAttachment(id, 'avatar')
+    const avatarUrl = URL.createObjectURL(blob)
+
+    const listItem = document.createElement('li')
+    const template = document.getElementById('character-template')
+    const clone = template.content.cloneNode(true)
+
+    const avatar = clone.querySelector('.character__avatar')
+    const name = clone.querySelector('.character__name')
+    const bio = clone.querySelector('.character__bio')
+
+    listItem.setAttribute('id', id)
+    avatar.setAttribute('src', avatarUrl)
+    name.textContent = `${doc.first_name} ${doc.last_name}`
+    bio.textContent = doc.bio
+
+    listItem.appendChild(clone)
+    characters.append(listItem)
+  })
+}
+
+const handleCharacterOnRemove = async (event) => {
+  if (!event.target.matches('.character__remove')) {
+    return
+  }
+
+  const listItem = event.target.closest('li')
+
+  if (!listItem) {
+    return
+  }
+
+  const doc = await db.get(listItem.id)
+
+  await db.remove(doc)
+
+  listItem.remove()
+}
+
+const bind = () => {
+  characters.addEventListener('click', handleCharacterOnRemove)
+}
+
+const init = () => {
+  bind()
+  renderCharacters()
+}
+
+init()
