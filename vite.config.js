@@ -8,6 +8,9 @@ export default defineConfig(({ command, mode }) => {
     plugins: [eslint(), stylelint()],
     build: {
       outDir: '../dist'
+    },
+    define: {
+      global: 'window' // Needed for PouchDB for some silly reason.
     }
   }
 })
