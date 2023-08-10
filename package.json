@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "events": "^3.3.0",
-    "pouchdb": "^8.0.1"
+    "pouchdb": "^8.0.1",
+    "pouchdb-find": "^8.0.1"
   }
 }
