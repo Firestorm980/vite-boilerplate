@@ -33,7 +33,7 @@
 
 .a11y-lightbox__content {
 	animation: fade-in 400ms 200ms both;
-	color: var(--color-white);
+	color: var(--color-white, white);
 	display: flex;
 	width: 100%;
 }
@@ -106,7 +106,7 @@
 .a11y-lightbox__control {
 	appearance: none;
 	border: 1px solid transparent;
-	color: var(--color-white);
+	color: var(--color-white, white);
 	cursor: pointer;
 	display: flex;
 	mask-position: center;
@@ -122,7 +122,7 @@
 
 	&:hover,
 	&:focus {
-		border-color: var(--color-white);
+		border-color: var(--color-white, white);
 		opacity: 1;
 	}
 
@@ -167,7 +167,7 @@
 
 .a11y-lightbox__counter {
 	align-items: center;
-	color: var(--color-white);
+	color: var(--color-white, white);
 	display: flex;
 	justify-content: center;
 	left: 0;
