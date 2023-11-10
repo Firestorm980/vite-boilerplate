@@ -1,3 +1,13 @@
+type Settings = {
+  id: string;
+  title: string;
+  close: string;
+  fullscreen: string;
+  previous: string;
+  next: string;
+  opensIn: string;
+}
+
 export default class A11yLightbox {
   $current: HTMLLIElement | null;
   $dialog: HTMLDivElement | null;
@@ -23,17 +33,9 @@ export default class A11yLightbox {
     [key: string]: Function[];
   };
   _observer: IntersectionObserver | null;
-  settings: {
-    id: string;
-    title: string;
-    close: string;
-    fullscreen: string;
-    previous: string;
-    next: string;
-    opensIn: string;
-  };
+  settings: Settings;
 
-  constructor (element, images, options = {}) {
+  constructor (element: HTMLElement, images: NodeListOf<HTMLImageElement>, options?: Settings) {
 
     if (!element) {
       console.error('A11yLightbox: No element was provided.')
