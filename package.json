@@ -20,5 +20,8 @@
     "vite": "^5.0.6",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-stylelint": "^5.2.1"
+  },
+  "dependencies": {
+    "motion": "^10.17.0"
   }
 }
