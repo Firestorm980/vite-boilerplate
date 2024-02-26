@@ -1,16 +1,11 @@
+/* stylelint-disable comment-empty-line-before */
+/* stylelint-disable selector-class-pattern */
 :root {
-	font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-	font-size: 16px;
-	line-height: 24px;
+	font-size: 1rem;
+	line-height: 1.5;
 	font-weight: 400;
-	color-scheme: light dark;
-	color: rgb(255 255 255 / 87%);
-	background-color: #242424;
-	font-synthesis: none;
-	text-rendering: optimizelegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-size-adjust: 100%;
+	background-color: #fff;
+	color: #000;
 }
 
 a {
@@ -31,72 +26,69 @@ body {
 	min-height: 100vh;
 }
 
-h1 {
-	font-size: 3.2em;
-	line-height: 1.1;
-}
-
 #app {
 	max-width: 1280px;
 	margin: 0 auto;
 	padding: 2rem;
 	text-align: center;
+	width: 100%;
 }
 
-.logo {
-	height: 6em;
-	padding: 1.5em;
-	will-change: filter;
-}
+svg {
+	height: auto;
+	max-width: 100%;
+	width: 100%;
 
-.logo:hover {
-	filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vanilla:hover {
-	filter: drop-shadow(0 0 2em #f7df1eaa);
-}
-
-.card {
-	padding: 2em;
-}
-
-.read-the-docs {
-	color: #888;
-}
-
-button {
-	border-radius: 8px;
-	border: 1px solid transparent;
-	padding: 0.6em 1.2em;
-	font-size: 1em;
-	font-weight: 500;
-	font-family: inherit;
-	background-color: #1a1a1a;
-	cursor: pointer;
-	transition: border-color 0.25s;
-}
-
-button:hover {
-	border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-	outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-	:root {
-		color: #213547;
-		background-color: #fff;
+	& text {
+		fill: currentcolor;
+		font-family: 'General Sans', sans-serif;
+		font-size: 102px;
+		fill-opacity: 0;
+		line-height: 1;
+		text-transform: uppercase;
 	}
 
-	a:hover {
-		color: #747bff;
+	& .text--designer {
+		font-weight: 300;
 	}
 
-	button {
-		background-color: #f9f9f9;
+	& .text--developer {
+		font-weight: 500;
+	}
+
+	& .text--nerd {
+		font-weight: 700;
+	}
+
+	& .designer__path {
+		fill: transparent;
+		stroke-width: 1px;
+		stroke: rebeccapurple;
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+	}
+
+	& .designer__line {
+		fill: rebeccapurple;
+		opacity: 0;
+	}
+
+	& .developer__mask {
+		transform: translate(-687px, 0);
+	}
+
+	& .developer__cursor {
+		opacity: 0;
+	}
+
+	& .nerd__lang {
+		display: none;
+	}
+
+	& .nerd__lang--futurama {
+		display: block;
+		stroke: #FEFB92;
+		stroke-width: 2px;
+		filter: drop-shadow(0 0 2px rgba(209 180 53 / 25%));
 	}
 }
